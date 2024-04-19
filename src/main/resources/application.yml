@@ -1,0 +1,19 @@
+spring:
+  application:
+    name:SpringBootWithDocker
+
+    # Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+
+  datasource:
+      url: jdbc:mysql://diallo:3306/lab10
+      username: root
+      password: "root"
+      # Hibernate Properties
+  jpa:
+      show-sql: false
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQLDialect
+          format_sql: true
