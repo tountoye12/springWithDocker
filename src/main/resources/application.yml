@@ -5,9 +5,9 @@ spring:
     # Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
 
   datasource:
-      url: jdbc:mysql://diallo:3306/lab10
+      url: jdbc:mysql://mysql-container:3306/mydatabase
       username: root
-      password: "root"
+      password: "password"
       # Hibernate Properties
   jpa:
       show-sql: false

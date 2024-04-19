@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/patients")
 public class PatientController {
@@ -17,7 +19,7 @@ public class PatientController {
         this.patinetService = patinetService;
     }
 
-    @PutMapping("/save")
+    @PostMapping("/save")
     public ResponseEntity<Patient> save(@RequestBody Patient patient) {
         return ResponseEntity.ok(patinetService.addPatient(patient));
     }
@@ -25,5 +27,10 @@ public class PatientController {
     @GetMapping("/{id}")
     public ResponseEntity<Patient> getPatient(@PathVariable Integer id) {
         return ResponseEntity.ok(patinetService.getPatientById(id));
+    }
+
+    @GetMapping("/list")
+    public ResponseEntity<List<Patient>> getPatients() {
+        return ResponseEntity.ok(patinetService.getAllPatient());
     }
 }

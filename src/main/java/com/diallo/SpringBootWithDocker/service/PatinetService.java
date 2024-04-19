@@ -5,6 +5,8 @@ import com.diallo.SpringBootWithDocker.model.Patient;
 import com.diallo.SpringBootWithDocker.repository.PatientRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PatinetService {
 
@@ -19,5 +21,9 @@ public class PatinetService {
     }
     public Patient getPatientById(Integer id) {
         return patientRepository.findById(id).orElse(null);
+    }
+
+    public List<Patient> getAllPatient() {
+        return patientRepository.findAll();
     }
 }
